@@ -9,7 +9,6 @@ const HomePage = () => (
   <>
     <Inicio />
     <QueEs />
-    <SumaVoluntades />
     <Herramientas />
     <Colaborar />
   </>
