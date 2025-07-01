@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Trama from '../assets/illustrations/tramaBG_Trama.svg'; // Importa la trama como SVG
 
+// Asegura que solo se ejecute en browser (Gatsby SSR safe)
+const isBrowser = typeof window !== "undefined";
+
 const GenerativeBackground = () => {
   const bgRef = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -14,6 +17,7 @@ const GenerativeBackground = () => {
 
   // Genera el path principal y segmentos para el círculo rojo
   useEffect(() => {
+    if (!isBrowser) return;
     if (markers.length < 2) {
       setMainPathD('');
       setMainPathSegments([]);
@@ -65,6 +69,7 @@ const GenerativeBackground = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
+    if (!isBrowser) return;
     let dir = 1;
     const interval = setInterval(() => {
       setCircleAnim(prev => {
@@ -82,22 +87,22 @@ const GenerativeBackground = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Debounce para scroll y resize
-  function debounce(fn, ms) {
-    let timer;
-    return (...args) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => fn(...args), ms);
-    };
-  }
-
-  // Calcula el progreso del scroll (0 = top, 1 = bottom) - optimizado con debounce
+  // Calcula el progreso del scroll (0 = top, 1 = bottom) - optimizado para respuesta rápida
   useEffect(() => {
-    const handleScroll = debounce(() => {
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollY = window.scrollY || window.pageYOffset;
-      setScrollProgress(docHeight > 0 ? scrollY / docHeight : 0);
-    }, 40);
+    if (!isBrowser) return;
+    // Sin debounce para scroll, solo throttle con requestAnimationFrame
+    let ticking = false;
+    function handleScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollY = window.scrollY || window.pageYOffset;
+          setScrollProgress(docHeight > 0 ? scrollY / docHeight : 0);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
@@ -105,6 +110,7 @@ const GenerativeBackground = () => {
 
   // Actualiza tamaño del SVG - optimizado con debounce
   useEffect(() => {
+    if (!isBrowser) return;
     const updateSize = debounce(() => {
       setDimensions({
         width: document.documentElement.scrollWidth,
@@ -116,8 +122,18 @@ const GenerativeBackground = () => {
     return () => window.removeEventListener('resize', updateSize);
   }, []);
 
+  // Debounce para scroll y resize
+  function debounce(fn, ms) {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => fn(...args), ms);
+    };
+  }
+
   // Extrae marcadores del DOM - optimizado con debounce y sin logs
   useEffect(() => {
+    if (!isBrowser) return;
     const updateMarkers = debounce(() => {
       const markerElements = Array.from(document.querySelectorAll('.marker'));
       const newMarkers = markerElements.map(el => {
@@ -160,6 +176,7 @@ const GenerativeBackground = () => {
 
   // Parallax para Trama SVG
   useEffect(() => {
+    if (!isBrowser) return;
     function handleParallax() {
       const scrollY = window.scrollY || window.pageYOffset;
       const scrollX = window.scrollX || window.pageXOffset;
@@ -392,9 +409,9 @@ const GenerativeBackground = () => {
               cy={mainPathPoint.y}
               r={230 + 10 * circleAnim}
               fill="none"
-              stroke="#EF4444"
-              strokeWidth={5}
-              opacity={0.1 + (circleAnim / 4)}
+              stroke="#440431"
+              strokeWidth={20 + (circleAnim * 20)}
+              opacity={0.4 + (circleAnim / 4)}
             />
           )}
 

@@ -20,7 +20,7 @@ const Inicio = () => (
         height: "100%",
         pointerEvents: "none",
         zIndex: 0,
-        background: "linear-gradient(to bottom, #EEE9EE 0%, #EEE9EE 50%, transparent 100%)"
+        background: "linear-gradient(to bottom, #EEE9EE 0%, #EEE9EE 70%, transparent 100%)"
       }}
     />
     <div className="container marker" style={{ position: "relative", zIndex: 1 }}>
