@@ -10,7 +10,7 @@ const QueEs = () => (
       <div className="header_image" style={{textAlign:"right"}}>
         <h2 >¿QUÉ ES<br></br>
         TEJER.RED?</h2>
-        <MujerBuscando  style={{width:"70%"}}/>
+        <MujerBuscando  style={{width:"70%"}} className="marker"/>
       </div>
       <div className="text_paragraph">
         <p>Tejer.Red es un repositorio de herramientas de
@@ -58,7 +58,7 @@ no debe ser enemigo de lo útil y lo inmediato.</p>
         <h2 >¿por qué públicar<br></br>
 herramientas<br></br>
 mínimas viables?</h2>
-        <HombrePensando  style={{width:"70%"}}/>
+        <HombrePensando  style={{width:"70%"}} className="marker"/>
       </div>
 
     </div>
@@ -68,7 +68,7 @@ mínimas viables?</h2>
       <div className="header_image" style={{textAlign:"right"}}>
         <h2 >SUMANDO<br></br>
         VOLUNTADES</h2>
-        <GrupoBandera  style={{width:"70%"}}/>
+        <GrupoBandera  style={{width:"70%"}} className="marker"/>
       </div>
       <div className="text_paragraph">
         <p>La potencia de Tejer.Red no reside sólo

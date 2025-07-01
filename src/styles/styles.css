@@ -42,7 +42,7 @@ p, a, li {
   
 
   .section.alt {
-    background-color: #EEE9EE;
+   
   }
   
   /* Herramientas */
@@ -52,7 +52,7 @@ p, a, li {
 
   .tools {
     padding: 3rem 2rem;
-    background-color: #EEE9EE;
+   
     text-align: center;
     border-top: 2px solid #eee;
     border-bottom: 2px solid #eee;
@@ -147,7 +147,7 @@ p, a, li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #EEE9EE;
+   
     border-bottom: 1px solid #e0e0e0;
     overflow: hidden;
   }
@@ -181,7 +181,7 @@ p, a, li {
   body {
     margin: 0;
     font-family: "Helvetica Neue", sans-serif;
-    background-color: #ffffff;
+    background-color: #EEE9EE;
     color: #111;
     line-height: 1.6;
   }
@@ -213,13 +213,13 @@ p, a, li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #EEE9EE;
+   
     border-bottom: 1px solid #e0e0e0;
     overflow: hidden;
   }
   
   section.alt {
-    background-color: #EEE9EE;
+   
   }
   
   section::before {
@@ -388,6 +388,62 @@ p, a, li {
   flex: 0 0 50%;
 }
 
+.flex_2_colab {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  padding: 0;
+  align-content: center;
+  justify-content: space-evenly;
+  background: rgb(145, 208, 240);
+}
+
+
+.flex_2_colab > div:nth-child(1)  {
+  flex-basis: 30%;
+  text-align: center;
+  overflow: hidden;
+  background: #d5d5d5;
+  overflow: hidden;
+}
+
+.flex_2_colab > div:nth-child(2) {
+  flex-basis: calc(70% - 4rem);
+  padding: 2rem;
+}
+
+.flex_2_colab > div:nth-child(1) svg {
+  width: 140%;
+  height: auto;
+  position: absolute;
+  bottom: 5%;
+  left: -20%;
+}
+
+#colaborar h2 {
+  font-size: clamp(2.5rem, 5vw + 3rem, 3rem);
+  margin-bottom: 0rem;
+  background: #440431;
+  display: inline-block;
+  color: white;
+  padding: 1.1rem;
+}
+
+#colaborar .frases-container {
+  gap: 10%;
+  width: 100%;
+}
+
+#colaborar .frases-container svg {
+  max-width: 20%;
+  height: 80px;
+}
+
+#colaborar p,
+#colaborar li{
+  font-size: clamp(0.7rem, 2vw + 0.3rem, 1.5rem);
+}
 
 .container.flex_2  h2 {
   font-size: clamp(2.5rem, 5vw + 3rem, 6rem);
@@ -420,6 +476,24 @@ p, a, li {
     line-height: 120%;
 }
 
+.container h2 {
+  font-size: clamp(2.5rem, 5vw + 3rem, 6rem);
+  color: #000000;
+  line-height: 80%;
+  font-weight: 500;
+}
+
+.container p{
+  font-size: clamp(1rem, 1vw + 0.6rem, 2.5rem);
+  margin-bottom: 1rem;
+  line-height: 120%;
+}
+
+.container li {
+  font-size: clamp(1rem, 1vw + 0.6rem, 2.5rem);
+  margin-bottom: 0.5rem;
+  line-height: 100%;
+}
   #inicio .container {
     padding: 0;
     max-width: none;

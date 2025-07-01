@@ -5,8 +5,10 @@ import SumaVoluntades from "./HomePageSumaVoluntades";
 import Herramientas from "./HomePageHerramientas";
 import Colaborar from "./HomePageColaborar";
 
+
 const HomePage = () => (
   <>
+
     <Inicio />
     <QueEs />
     <Herramientas />
