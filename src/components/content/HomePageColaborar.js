@@ -6,7 +6,7 @@ import Frase03 from "../../assets/illustrations/frase-03.svg";
 
 const Colaborar = () => (
   <section id="colaborar" className="content alt">
-    <div className="container marker">
+    <div className="container marker" style={{width: "100%"}}>
       <h2 style={{
         marginBottom: "0rem",
         background: "#440431",

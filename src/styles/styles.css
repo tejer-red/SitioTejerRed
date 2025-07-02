@@ -414,11 +414,11 @@ p, a, li {
 }
 
 .flex_2_colab > div:nth-child(1) svg {
-  width: 140%;
+  width: 110%;
   height: auto;
   position: absolute;
-  bottom: 5%;
-  left: -20%;
+  bottom: -30%;
+  left: -5%;
 }
 
 #colaborar h2 {
@@ -442,7 +442,8 @@ p, a, li {
 
 #colaborar p,
 #colaborar li{
-  font-size: clamp(0.7rem, 2vw + 0.3rem, 1.5rem);
+  font-size: clamp(0.7rem, 2vw + 0.3rem, 1.8rem);
+  line-height: 120%;
 }
 
 .container.flex_2  h2 {
@@ -478,7 +479,7 @@ p, a, li {
 
 .container h2 {
   font-size: clamp(2.5rem, 5vw + 3rem, 6rem);
-  color: #000000;
+
   line-height: 80%;
   font-weight: 500;
 }
@@ -557,19 +558,18 @@ p, a, li {
   
     .tools {
           height: fit-content;
-          display: flex
-  ;
+          display: flex;
           flex-direction: row;
           align-items: center;
-          background-color: white;
           flex-wrap: wrap;
           align-content: flex-start;
           margin-bottom: 1rem;
       }
       .tool {
-      padding: 0.5rem;
-      width: auto;
-      }
+        padding: 2rem;
+        width: auto;
+        min-height: fit-content;
+    }
   
       .tool-list {
       display: flex;
@@ -580,6 +580,10 @@ p, a, li {
       align-content: space-around;
       align-items: center;
       }
+
+      .tools {
+        padding: 0;
+    }
   
   
       .footer {
@@ -605,15 +609,110 @@ p, a, li {
       display:none!important;
     }
     .tools h2 {
-      color: #ED66A4;
+      color: #181818;
       font-size: 1.6rem;
       margin: 0.7rem;
   }
   .tool h3 {
-      color: #ED66A4;
-      font-size: 1.2rem;
+      color: #111111;
+      font-size: 2.2rem;
       margin-bottom: 0.5rem;
       text-align: center;
   }
-  
+  .container.flex_2 {
+    height: auto;
+    width: 100dvw;
+    display: flex
+;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    align-content: stretch;
+    flex-direction: column;
 }
+.container.flex_2.reverse {
+    flex-direction: column-reverse;
+}
+
+  .container.flex_2 > div {
+    flex: 0 0 0;
+}
+
+.container.flex_2 svg {
+  width: 15rem!important;
+  height: auto!important;
+  display: none!important;
+}
+section {
+  padding-top: calc(0rem + 1rem);
+  height: auto;
+  display: flex
+;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#inicio {
+  padding-top:90px
+}
+.container.flex_2 h2 {
+  font-size: clamp(2.5rem, 5vw + 3rem, 2rem) !important;
+  color: #000000;
+  margin-bottom: 1rem;
+  line-height: 80%;
+  font-weight: 500;
+  border-right: none !important;
+  border-left: 0.4rem solid black !important;
+  text-align: center !important;
+  padding: 0 !important;
+  padding-left: 1rem !important;
+  width: calc(100dvw - 4rem);
+}
+
+.flex_2_colab {
+  display: flex
+;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  padding: 0;
+  align-content: center;
+  justify-content: space-evenly;
+  background: rgb(145, 208, 240);
+}
+.flex_2_colab > div:nth-child(1) svg {
+  position: relative;
+    width: 60%;
+    height: auto;
+    bottom: -30%;
+    left: 0%;
+}
+
+main .container {
+  margin: 0 auto;
+  padding: 0;
+}
+
+#colaborar h2 {
+  font-size: clamp(1.7rem, 10vw + 1rem, 2.3rem);
+}
+#colaborar p, #colaborar li {
+  font-size: clamp(0.7rem, 4.6vw + 0.3rem, 1.3rem);
+  line-height: 100%;
+}
+
+#colaborar .frases-container {
+  display: flex
+;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: auto;
+  padding: 0.3rem 0;
+  gap: 1rem;
+}
+  }

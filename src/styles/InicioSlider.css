@@ -136,3 +136,105 @@ h2.slider.izquierda {
     font-family: "Hanken Grotesk", sans-serif;
     margin-bottom: 1rem;
 }
+
+@media (max-width: 768px) {
+  .slide_1 h1 {
+    width: 80%;
+    color: black;
+    font-size: 2rem;
+    line-height: 140%;
+  }
+
+  .tejer-swiper .flex_2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+.tejer-swiper .flex_2 > div {
+    padding: 1vw 4vw;
+    flex-basis: 0;
+}
+
+.tejer-swiper .flex_2 > div svg {
+    overflow: visible;
+    display: block !important;
+    position: revert !important;
+    left: 0px;
+    bottom: -180px;
+    height: 14rem;
+    margin: auto;
+}
+
+.slide-text p {
+    font-size: 1.3rem;
+    line-height: 100%;
+}
+
+h2.slider {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 80%;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF6265;
+    color: white;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-top: 20px;
+    font-weight: 900;
+    font-size: 1rem;
+    width: 89%;
+    text-align: center;
+}
+
+.frases-container .frase {
+    width: 55.3%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 10rem;
+}
+
+.frases-container {
+    display: flex
+;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: auto;
+    padding: 2rem 0;
+    gap: 1rem;
+}
+
+.slide_4 h1 {
+    font-size: 1.5rem;
+    font-weight: 200;
+    line-height: 110%;
+    font-family: "Hanken Grotesk", sans-serif;
+    margin-bottom: 1rem;
+}
+
+
+.tejer-swiper h2 > br {
+    display: none;
+    }
+    .tejer-swiper h2.slider {
+      text-align: center!important;
+    }
+    .tejer-swiper .flex_2 {
+      justify-content: space-around;
+    }
+    
+    .tejer-swiper .flex_2 > div {
+      padding: 1vw 14vw;
+      flex-basis: 0;
+    }
+}

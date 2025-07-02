@@ -1,5 +1,7 @@
 import React from "react";
 import InicioSlider from "./InicioSlider";
+import InicioSliderMobile from "./InicioSliderMobile";
+import isMobile from "../../utils/IsMobile";
 
 const Inicio = () => (
   <section
@@ -24,7 +26,7 @@ const Inicio = () => (
       }}
     />
     <div className="container marker" style={{ position: "relative", zIndex: 1 }}>
-      <InicioSlider />
+      {isMobile() ? <InicioSliderMobile /> : <InicioSlider />}
     </div>
   </section>
 );

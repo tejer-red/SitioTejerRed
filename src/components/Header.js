@@ -1,32 +1,40 @@
 import React from "react";
+import HeaderMobile from "./HeaderMobile";
+import Logo from "../assets/logo/logo-01.svg";
 
 const Header = () => (
-  <header className="header">
-    <div
-      className="container"
-      style={{
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      <nav
-        className="menu"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "100%",
-          gap: "10%",
-        }}
-      >
-          <a href="#inicio">Inicio</a>
-          <a href="#que">¿Qué es?</a>
-          <img src="logo.png" alt="Tejer.Red Logo" style={{ height: "300px", maxHeight: "5rem" }} />
-          <a href="#herramientas">Herramientas</a>
-          <a href="#colaborar">Colabora</a>
-      </nav>
+  <>
+    <div className="header-desktop">
+      <header className="header">
+        <div
+          className="container"
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "center",
+          }}
+        >
+          <Logo style={{ height: "3rem", marginRight: "2rem" }} />
+          <nav
+            className="menu"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              width: "100%",
+              gap: "2rem",
+            }}
+          >
+            <a href="#inicio">Inicio</a>
+            <a href="#que">¿Qué es?</a>
+            <a href="#herramientas">Herramientas</a>
+            <a href="#colaborar">Colabora</a>
+          </nav>
+        </div>
+      </header>
     </div>
-  </header>
+    <HeaderMobile />
+  </>
 );
 
 export default Header;
