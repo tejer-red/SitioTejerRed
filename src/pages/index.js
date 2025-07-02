@@ -1,6 +1,7 @@
 import * as React from "react";
 import "../styles/styles.css";
 import Header from "../components/Header";
+import HeaderMobile from "../components/HeaderMobile";
 import HomePage from "../components/content/HomePage";
 import Footer from "../components/Footer";
 import GenerativeBackground from "../components/bg";
@@ -10,7 +11,7 @@ const Index = () => {
   const mobile = isMobile();
   return (
     <>
-      <Header />
+      {mobile ? <HeaderMobile offset={72} /> : <Header/>}
       {!mobile ? <GenerativeBackground /> : null}
       <main>
         <HomePage />

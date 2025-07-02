@@ -2,8 +2,24 @@ import React, { useState } from "react";
 import Logo from "../assets/logo/logo-01.svg";
 import "./HeaderMobile.css";
 
-const HeaderMobile = () => {
+// scrollWithOffset ahora recibe offset como argumento
+const scrollWithOffset = (id, offset = 72) => {
+  const el = document.getElementById(id);
+  if (el) {
+    const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+};
+
+const HeaderMobile = ({ offset = 64 }) => {
   const [open, setOpen] = useState(false);
+
+  // handleNavClick usa el offset recibido por props
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    setOpen(false);
+    setTimeout(() => scrollWithOffset(id, offset), 100);
+  };
 
   return (
     <div className="header-mobile">
@@ -20,10 +36,10 @@ const HeaderMobile = () => {
         <span />
       </button>
       <nav className={`mobile-menu${open ? " show" : ""}`}>
-        <a href="#inicio" onClick={() => setOpen(false)}>Inicio</a>
-        <a href="#que" onClick={() => setOpen(false)}>¿Qué es?</a>
-        <a href="#herramientas" onClick={() => setOpen(false)}>Herramientas</a>
-        <a href="#colaborar" onClick={() => setOpen(false)}>Colabora</a>
+        <a href="#inicio" onClick={e => handleNavClick(e, "inicio")}>Inicio</a>
+        <a href="#que" onClick={e => handleNavClick(e, "que")}>¿Qué es?</a>
+        <a href="#herramientas" onClick={e => handleNavClick(e, "herramientas")}>Herramientas</a>
+        <a href="#colaborar" onClick={e => handleNavClick(e, "colaborar")}>Colabora</a>
       </nav>
       {open && <div className="mobile-menu-backdrop" onClick={() => setOpen(false)} />}
     </div>
