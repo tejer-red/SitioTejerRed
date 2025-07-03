@@ -98,8 +98,8 @@ const InicioSliderMobile = () => {
                         <p className="blanco">Organización, el análisis y la documentación de datos en campo.
                             Todas son de acceso abierto, libremente modificables y pensadas
                             para acompañar, nunca sustituir, el trabajo de quienes buscan.</p>
-                        <a href="#que" className="cta-button" style={{ backgroundColor: "#F9C529", color: "#00292F" }}>
-                            ¿Qué es Tejer.Red?
+                        <a href="#herramientas" className="cta-button" style={{ backgroundColor: "#F9C529", color: "#00292F" }}>
+                            Probar herramientas
                         </a>
                     </div>
                     <div className="slide-image">
@@ -118,8 +118,8 @@ const InicioSliderMobile = () => {
                             organizaciones civiles e instituciones. Desde este repositorio se diseñan
                             y publican soluciones tecnológicas adaptadas a las necesidades reales
                             de los colectivos.</p>
-                        <a href="#que" className="cta-button" style={{ backgroundColor: "#F9C529", color: "#00292F" }}>
-                            ¿Qué es Tejer.Red?
+                        <a href="#colaborar" className="cta-button" style={{ backgroundColor: "#F9C529", color: "#00292F" }}>
+                            Quiero colaborar
                         </a>
                     </div>
                     <div className="slide-image">

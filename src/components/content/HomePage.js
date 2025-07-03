@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import Inicio from "./HomePageInicio";
 import QueEs from "./HomePageQueEs";
 import SumaVoluntades from "./HomePageSumaVoluntades";
@@ -8,7 +9,9 @@ import Colaborar from "./HomePageColaborar";
 
 const HomePage = () => (
   <>
-
+    <Helmet>
+      <title>Inicio | Tejer.Red</title>
+    </Helmet>
     <Inicio />
     <QueEs />
     <Herramientas />
