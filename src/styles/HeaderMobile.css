@@ -1,0 +1,103 @@
+.header-mobile {
+  display: none;
+}
+
+.header-mobile-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  background: #EEE9EE; /* Cambiado a gris */
+  z-index: 1001;
+  position: fixed;      /* Añadido */
+  top: 0;               /* Añadido */
+  left: 0;              /* Añadido */
+  right: 0;             /* Añadido */
+  width: 100dvw;         /* Añadido */
+  box-sizing: border-box; /* Añadido */
+}
+
+.hamburger {
+  position: fixed;
+  top: 1.5rem;
+  right: 5%;
+  width: 3rem;
+  height: 2rem;
+  background: none;
+  border: none;
+  display: flex
+;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 3rem;
+  background: #222;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.hamburger.open span:nth-child(1) {
+  transform: translate(0rem, 1rem) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translate(0rem, -0.7rem) rotate(-45deg);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100vw; /* Cambiado de -70vw a -100vw para ocultar completamente */
+  width: 70vw;
+  height: 100vh;
+  background: #EEE9EE; /* Cambiado a gris */
+  box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 2rem 2rem 2rem;
+  gap: 2rem;
+  transition: right 0.3s;
+  z-index: 1001;
+  /* Ajusta el padding-top si la barra ocupa espacio */
+  /* padding-top: 4.5rem; */
+}
+.mobile-menu.show {
+  right: 0;
+}
+.mobile-menu a {
+  color: #222;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.mobile-menu-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+/* Responsive: show/hide desktop/mobile headers */
+@media (max-width: 900px) {
+  .header-desktop {
+    display: none;
+  }
+  .header-mobile {
+    display: block;
+  }
+}
+@media (min-width: 901px) {
+  .header-desktop {
+    display: block;
+  }
+  .header-mobile {
+    display: none;
+  }
+}
