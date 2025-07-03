@@ -11,7 +11,7 @@ const Index = () => {
   const mobile = isMobile();
   return (
     <>
-      {mobile ? <HeaderMobile offset={72} /> : <Header/>}
+      {mobile ? <HeaderMobile offset={2} /> : <Header/>}
       {!mobile ? <GenerativeBackground /> : null}
       <main>
         <HomePage />

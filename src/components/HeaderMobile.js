@@ -1,30 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Logo from "../assets/logo/logo-01.svg";
-import "./HeaderMobile.css";
+import "../styles/HeaderMobile.css"; // Asegúrate de tener este archivo CSS para los estilos
 
-// scrollWithOffset ahora recibe offset como argumento
-const scrollWithOffset = (id, offset = 72) => {
+const scrollWithOffset = (id) => {
   const el = document.getElementById(id);
-  if (el) {
-    const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
+  const offsetElement = document.querySelector(".header-mobile-bar");
+  if (el && offsetElement) {
+    const y = el.getBoundingClientRect().top + window.pageYOffset - offsetElement.offsetHeight;
+    console.log("Scrolling to:", id, "at position:", y);
+    console.log("Offset height:", offsetElement.offsetHeight);
     window.scrollTo({ top: y, behavior: "smooth" });
   }
 };
 
-const HeaderMobile = ({ offset = 64 }) => {
-  const [open, setOpen] = useState(false);
+const HeaderMobile = () => {
 
-  // handleNavClick usa el offset recibido por props
-  const handleNavClick = (e, id) => {
+const [open, setOpen] = useState(false);
+
+const handleNavClick = (e, id) => {
     e.preventDefault();
     setOpen(false);
-    setTimeout(() => scrollWithOffset(id, offset), 100);
-  };
+    setTimeout(() => scrollWithOffset(id), 100);
+};
 
   return (
     <div className="header-mobile">
       <div className="header-mobile-bar">
-        <Logo style={{ height: "2.5rem" }} />
+        <Logo style={{ height: "3rem" }} />
       </div>
       <button
         className={`hamburger${open ? " open" : ""}`}

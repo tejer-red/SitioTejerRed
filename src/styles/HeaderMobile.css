@@ -13,40 +13,42 @@
   top: 0;               /* Añadido */
   left: 0;              /* Añadido */
   right: 0;             /* Añadido */
-  width: 100vw;         /* Añadido */
+  width: 100dvw;         /* Añadido */
   box-sizing: border-box; /* Añadido */
 }
 
 .hamburger {
-  position: fixed;         /* Cambiado a fixed */
-  top: 1rem;               /* Espaciado desde arriba */
-  right: 1rem;             /* Espaciado desde la derecha */
-  width: 2rem;
+  position: fixed;
+  top: 1.5rem;
+  right: 5%;
+  width: 3rem;
   height: 2rem;
   background: none;
   border: none;
-  display: flex;
+  display: flex
+;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  z-index: 1100;           /* Más alto que el menú y la barra */
+  z-index: 1100;
 }
+
 .hamburger span {
   display: block;
   height: 3px;
-  width: 100%;
+  width: 3rem;
   background: #222;
   border-radius: 2px;
   transition: 0.3s;
 }
 .hamburger.open span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
+  transform: translate(0rem, 1rem) rotate(45deg);
 }
 .hamburger.open span:nth-child(2) {
   opacity: 0;
 }
 .hamburger.open span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
+  transform: translate(0rem, -0.7rem) rotate(-45deg);
 }
 
 .mobile-menu {
